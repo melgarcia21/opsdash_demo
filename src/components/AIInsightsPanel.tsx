@@ -88,10 +88,10 @@ Top Defect Causes: ${reasonBreakdown || 'None reported'}
       {!open ? (
         <button
           onClick={() => { setOpen(true); generateInsight(); }}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:from-violet-700 hover:to-purple-700 transition-all shadow-sm hover:shadow-md"
+          className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:from-violet-700 hover:to-purple-700 transition-all shadow-sm hover:shadow-md"
         >
-          <Sparkles className="w-4 h-4" />
-          AI Insights
+          <Sparkles className="w-4 h-4 shrink-0" />
+          <span className="hidden sm:inline">AI Insights</span>
         </button>
       ) : (
         <AnimatePresence>

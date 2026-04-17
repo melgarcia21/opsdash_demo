@@ -833,9 +833,9 @@ function SettingsView({ settings, onSave, userId }: { settings: Record<string, s
   };
 
   return (
-    <div className="max-w-3xl space-y-6">
+    <div className="max-w-3xl space-y-6 w-full">
       {/* Tab Switcher */}
-      <div className="flex bg-slate-100 rounded-lg p-0.5 w-fit">
+      <div className="flex bg-slate-100 rounded-lg p-0.5 w-full sm:w-fit overflow-x-auto snap-x scrollbar-hide">
         {([
           { key: 'thresholds' as const, label: 'Alert Thresholds', icon: Settings },
           { key: 'team' as const, label: 'Team Management', icon: Users },
@@ -844,7 +844,7 @@ function SettingsView({ settings, onSave, userId }: { settings: Record<string, s
           <button
             key={key}
             onClick={() => setActiveTab(key)}
-            className={cn('flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition', activeTab === key ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700')}
+            className={cn('flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md transition whitespace-nowrap shrink-0 snap-start', activeTab === key ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700')}
           >
             <Icon className="w-4 h-4" />
             {label}

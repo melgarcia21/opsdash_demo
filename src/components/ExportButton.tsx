@@ -68,11 +68,11 @@ export default function ExportButton({ reports, title = 'Reports' }: { reports: 
     <div ref={ref} className="relative no-print">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-all"
+        className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-all"
       >
-        <Download className="w-4 h-4" />
-        Export
-        <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <Download className="w-4 h-4 shrink-0" />
+        <span className="hidden sm:inline">Export</span>
+        <ChevronDown className={`hidden sm:block w-3.5 h-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
 
       <AnimatePresence>

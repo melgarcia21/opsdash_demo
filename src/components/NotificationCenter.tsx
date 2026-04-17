@@ -106,7 +106,7 @@ export default function NotificationCenter({ userId }: { userId: number }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-12 w-[380px] max-h-[480px] bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 flex flex-col"
+            className="absolute right-0 top-12 w-[calc(100vw-32px)] sm:w-[380px] max-w-[380px] max-h-[480px] bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-slate-50/50">

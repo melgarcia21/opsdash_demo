@@ -34,16 +34,16 @@ export default function FilterBar({
     <div className="no-print">
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+        className={`relative flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-lg border text-sm font-medium transition-all ${
           hasActiveFilter
             ? 'bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100'
             : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'
         }`}
       >
-        <Filter className="w-4 h-4" />
-        Filters
+        <Filter className="w-4 h-4 shrink-0" />
+        <span className="hidden sm:inline">Filters</span>
         {activeCount > 0 && (
-          <span className="bg-blue-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 sm:static sm:top-auto sm:right-auto bg-blue-600 text-white text-[10px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center">
             {activeCount}
           </span>
         )}
@@ -57,8 +57,8 @@ export default function FilterBar({
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <div className="mt-3 p-4 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-wrap items-end gap-4">
-              <div className="flex-1 min-w-[140px]">
+            <div className="mt-3 p-4 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-end gap-4 overflow-hidden">
+              <div className="w-full sm:flex-1 sm:min-w-[140px]">
                 <label className="block text-xs font-medium text-slate-500 mb-1">From Date</label>
                 <input
                   type="date"
@@ -67,7 +67,7 @@ export default function FilterBar({
                   className="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
-              <div className="flex-1 min-w-[140px]">
+              <div className="w-full sm:flex-1 sm:min-w-[140px]">
                 <label className="block text-xs font-medium text-slate-500 mb-1">To Date</label>
                 <input
                   type="date"
@@ -76,7 +76,7 @@ export default function FilterBar({
                   className="w-full px-3 py-1.5 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                 />
               </div>
-              <div className="flex-1 min-w-[140px]">
+              <div className="w-full sm:flex-1 sm:min-w-[140px]">
                 <label className="block text-xs font-medium text-slate-500 mb-1">Machine / Line</label>
                 <select
                   value={filters.machineId}
@@ -89,7 +89,7 @@ export default function FilterBar({
                   ))}
                 </select>
               </div>
-              <div className="flex-1 min-w-[140px]">
+              <div className="w-full sm:flex-1 sm:min-w-[140px]">
                 <label className="block text-xs font-medium text-slate-500 mb-1">Shift</label>
                 <select
                   value={filters.shift}
