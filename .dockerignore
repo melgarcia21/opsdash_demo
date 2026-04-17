@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+opsdash.db
+opsdash.db-journal
+opsdash.db-wal
+opsdash.db-shm
+.git
+.vscode/
+npm-debug.log
